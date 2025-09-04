@@ -1,73 +1,75 @@
-# Welcome to your Lovable project
+WELCOME TO MY NETWORK TRAFFIC ANALYZER PROJECT.
 
-## Project info
+## 🧠 Network Sentinel: Adaptive Traffic Analyzer & Response Framework  
+**Built by Amos | Hosted on [lovable.dev](https://lovable.dev)**
 
-**URL**: https://lovable.dev/projects/985e30d3-4edd-4ea3-8622-441e49473f38
+### 🔐 Purpose  
+Network Sentinel is a modular, cross-platform traffic analysis and response engine designed for hybrid environments. It empowers defenders with real-time visibility, automated triage, and intelligent response—bridging packet-level insight with strategic decision-making.
 
-## How can I edit this code?
+Whether you're simulating adversarial behavior in a CTF or hardening production infrastructure, this tool adapts to your workflow.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+### 🧰 Core Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/985e30d3-4edd-4ea3-8622-441e49473f38) and start prompting.
+| Module | Description |
+|--------|-------------|
+| **Traffic Capture** | Uses `Npcap`, `tshark`, and custom Python wrappers to ingest live traffic across VLANs and interfaces |
+| **SIEM Integration** | Pushes enriched logs to Splunk, ELK, or Wazuh via RESTful API or syslog |
+| **Dashboard & Visualization** | Real-time dashboards built with Observable, Grafana, and Plotly for protocol breakdown, TCP flags, and anomaly heatmaps |
+| **ML Models** | Scikit-learn and XGBoost models trained on labeled attack datasets (DDoS, port scans, brute force) with live inference |
+| **Auto-Response Engine** | Python-based logic for triggering firewall rules, isolating hosts, or sending alerts via Slack/Email |
+| **Red/Blue Team Simulation** | Includes CLI wrappers for `nmap`, `hping3`, and `sqlmap` to simulate adversarial traffic and test detection logic |
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+### 🧪 Architecture Overview
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
++------------------+       +------------------+       +------------------+
+| Traffic Capture  | --->  | Enrichment & ML  | --->  | SIEM & Dashboards|
++------------------+       +------------------+       +------------------+
+        |                          |                          |
+        v                          v                          v
+  Auto-Response Engine     Threat Classification       Visualization Layer
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 🚀 Getting Started
 
-**Use GitHub Codespaces**
+```bash
+git clone https://github.com/yourusername/network-sentinel
+cd network-sentinel
+bash setup.sh  # Installs dependencies, configures interfaces
+python3 sentinel.py --live --interface eth0
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+### 📊 Sample Dashboards  
+- **Protocol Distribution**: Pie chart of TCP/UDP/ICMP traffic  
+- **Anomaly Timeline**: ML-detected spikes with confidence scores  
+- **Flag Heatmap**: SYN/ACK/RST patterns across time windows  
+- **Response Log**: Actions taken (blocked IPs, alerts sent)
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### 🧠 ML Model Training
 
-## How can I deploy this project?
+```bash
+python3 train_model.py --dataset datasets/ddos.csv --model xgboost
+python3 sentinel.py --ml-model models/xgboost.pkl --live
+```
 
-Simply open [Lovable](https://lovable.dev/projects/985e30d3-4edd-4ea3-8622-441e49473f38) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+### 🛡️ Use Cases
 
-Yes, you can!
+- SOC Analyst training with live packet inspection and alerting
+- Red team simulation with automated detection and response
+- GRC reporting with visual summaries of network events
+- Portfolio showcase for cybersecurity roles
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
